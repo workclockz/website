@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: #000;
+  color: #00ff41;
+  font-family: 'Share Tech Mono', monospace;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.terminal-wrap {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scanline {
+  pointer-events: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 3px,
+    rgba(0,255,65,0.03) 3px,
+    rgba(0,255,65,0.03) 4px
+  );
+  z-index: 10;
+}
+
+.container {
+  text-align: center;
+  padding: 40px 20px;
+  max-width: 700px;
+  width: 90%;
+  border: 1px solid #00ff4133;
+  background: rgba(0,255,65,0.02);
+  box-shadow: 0 0 40px rgba(0,255,65,0.08), inset 0 0 40px rgba(0,0,0,0.5);
+}
+
+.logo {
+  color: #00ff41;
+  font-size: clamp(6px, 1.4vw, 12px);
+  line-height: 1.4;
+  text-shadow: 0 0 10px #00ff41;
+  margin-bottom: 20px;
+  white-space: pre;
+}
+
+.subtitle {
+  color: #00cc33;
+  font-size: 13px;
+  letter-spacing: 4px;
+  margin-bottom: 24px;
+  opacity: 0.7;
+}
+
+.desc {
+  color: #aaa;
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 36px;
+}
+
+#btn {
+  background: transparent;
+  border: 1px solid #00ff41;
+  color: #00ff41;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 14px;
+  letter-spacing: 3px;
+  padding: 14px 36px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-shadow: 0 0 8px #00ff41;
+  box-shadow: 0 0 12px rgba(0,255,65,0.15);
+}
+
+#btn:hover {
+  background: #00ff4115;
+  box-shadow: 0 0 24px rgba(0,255,65,0.4);
+}
+
+#btn:active { transform: scale(0.97); }
+
+#btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.status {
+  margin-top: 20px;
+  font-size: 12px;
+  color: #00cc33;
+  min-height: 18px;
+  letter-spacing: 1px;
+}
+
+.status.err { color: #ff4141; }
